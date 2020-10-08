@@ -19,10 +19,16 @@ List<String> images = ['assets/codechef.png','assets/codeforces.jpg','assets/spo
   Widget build(BuildContext context) {
     return Scaffold(
 
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xffFBD28B),
       appBar: AppBar(
         title: Text(
-          'Ratings'
+          'Ratings',
+          style: TextStyle(
+            fontFamily: 'monospace',
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+            color: Colors.white70
+          ),
         ),
       ),
     body: SafeArea(
@@ -34,9 +40,11 @@ margin: EdgeInsets.all(3),
           children: [
 
            CircleAvatar(
-             backgroundImage: AssetImage('assets/coder1.jpg'),
-             minRadius: 110,
-             foregroundColor: Colors.white,
+             backgroundImage: AssetImage('assets/coders.webp'),
+             maxRadius: 120,
+             minRadius: 120,
+             //foregroundColor: Colors.yellow,
+
            ),
             SizedBox(height: 10,),
             Expanded(
@@ -56,7 +64,8 @@ margin: EdgeInsets.all(3),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0)
                       ),
-                      color: Colors.deepOrangeAccent,
+                      color: Color(0xffF5C469),
+
                       child: Image(image: AssetImage(images[i]),),
 //                  child: Text(
 //                    platform[i]

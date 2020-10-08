@@ -44,13 +44,6 @@ class _ForcesState extends State<Forces> {
 
         data = jsonDecode(response.body);
 
-//        print(data);
-//        print(data['status']);
-//        print(data['rating']);
-//        print(data['max rating']);
-//        print(data['rank']);
-//        print(data['max rank']);
-//        print(data['username']);
 
 
         setState(() {
@@ -73,6 +66,7 @@ class _ForcesState extends State<Forces> {
               builder: (BuildContext context)
               {
                 return AlertDialog(
+                  backgroundColor: Color(0xffFBD28B),
                   title: Text('Error Occurred'),
                   content: Text(data['details']),
                   actions: [
@@ -98,6 +92,7 @@ class _ForcesState extends State<Forces> {
               builder: (BuildContext context)
               {
                 return AlertDialog(
+                  backgroundColor: Color(0xffFBD28B),
                   title: RichText(
                     softWrap: true,
                     text:TextSpan(
@@ -122,7 +117,7 @@ class _ForcesState extends State<Forces> {
                     height: 115,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.0),
-                      color: Colors.white70,
+
 
                     ),
                     child: Column(
@@ -218,7 +213,7 @@ class _ForcesState extends State<Forces> {
                   actions: [
                     FlatButton(
                       child: Text("ok",style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 25,
                           fontFamily: 'Times New Roman'
                       ),),
                       onPressed: (){
@@ -247,7 +242,7 @@ class _ForcesState extends State<Forces> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      backgroundColor: Colors.orangeAccent,
+      backgroundColor: Color(0xffFBD28B),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(10.0),
@@ -282,9 +277,12 @@ class _ForcesState extends State<Forces> {
                       },
                       decoration: InputDecoration(
                         labelText: 'Codeforces Username',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
+
+                        helperMaxLines: 1,
+                        icon: Icon(Icons.account_circle),
+//                        border: OutlineInputBorder(
+//                          borderRadius: BorderRadius.circular(5.0),
+//                        ),
                       ),
                       onSaved: (input) {
                         text = input;
@@ -296,13 +294,13 @@ class _ForcesState extends State<Forces> {
               ),
               SizedBox(height: 10.0,),
               loading ? CircularProgressIndicator():MaterialButton(
-                padding: EdgeInsets.all(20.0),
-                color: Colors.deepOrange,
+                padding: EdgeInsets.all(10.0),
+                color: Color(0xffE5B143),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: Align(
-                  child: Text('Show',style: TextStyle(color: Colors.white,fontSize: 20.0),),
+                  child: Text('Show',style: TextStyle(color: Colors.white70,fontSize: 30.0,fontFamily: 'monospace'),),
                 ),
                 onPressed: (){
                   getData();

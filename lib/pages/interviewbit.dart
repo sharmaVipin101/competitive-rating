@@ -42,7 +42,7 @@ class _InterviewBitState extends State<InterviewBit> {
           status = data['status'];
           username = data['username'];
           rank = data['rank'].toString();
-          score = data['rank'].toString();
+          score = data['score'].toString();
           streak = data['streak'];
         });
 
@@ -53,6 +53,7 @@ class _InterviewBitState extends State<InterviewBit> {
               builder: (BuildContext context)
               {
                 return AlertDialog(
+                  backgroundColor: Color(0xffFBD28B),
                   title: Text('Error Occurred'),
                   content: Text(data['details']),
                   actions: [
@@ -78,6 +79,7 @@ class _InterviewBitState extends State<InterviewBit> {
               builder: (BuildContext context)
               {
                 return AlertDialog(
+                  backgroundColor: Color(0xffFBD28B),
                   title: RichText(
                     softWrap: true,
                     text:TextSpan(
@@ -178,7 +180,7 @@ class _InterviewBitState extends State<InterviewBit> {
                   actions: [
                     FlatButton(
                       child: Text("ok",style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 25,
                           fontFamily: 'Times New Roman'
                       ),),
                       onPressed: (){
@@ -207,7 +209,7 @@ class _InterviewBitState extends State<InterviewBit> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      backgroundColor: Colors.orangeAccent,
+      backgroundColor: Color(0xffFBD28B),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(10.0),
@@ -234,6 +236,7 @@ class _InterviewBitState extends State<InterviewBit> {
                   child: Container(
                     padding: EdgeInsets.only(top: 10.0),
                     child: TextFormField(
+                      cursorColor: Colors.white,
                       enabled: !loading,
                       validator: (input) {
                         if (input.isEmpty) {
@@ -242,9 +245,12 @@ class _InterviewBitState extends State<InterviewBit> {
                       },
                       decoration: InputDecoration(
                         labelText: 'InterviewBit Username',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
+                        focusColor: Colors.blue,
+                        helperMaxLines: 1,
+                        icon: Icon(Icons.account_circle),
+//                        border: OutlineInputBorder(
+//                          borderRadius: BorderRadius.circular(5.0),
+//                        ),
                       ),
                       onSaved: (input) {
                         text = input;
@@ -256,13 +262,13 @@ class _InterviewBitState extends State<InterviewBit> {
               ),
               SizedBox(height: 10.0,),
               loading ? CircularProgressIndicator():MaterialButton(
-                padding: EdgeInsets.all(20.0),
-                color: Colors.deepOrange,
+                padding: EdgeInsets.all(10.0),
+                color: Color(0xffE5B143),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: Align(
-                  child: Text('Show',style: TextStyle(color: Colors.white,fontSize: 20.0),),
+                  child: Text('Show',style: TextStyle(color: Colors.white70,fontSize: 30.0,fontFamily: 'monospace'),),
                 ),
                 onPressed: (){
                   getData();

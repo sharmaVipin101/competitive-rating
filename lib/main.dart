@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'file:///F:/fluter%20apps/ratings/lib/pages/spoj.dart';
 import 'homepage.dart';
 
 
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Ratings",
       theme: ThemeData(
-        primarySwatch: Colors.red
+        primarySwatch: Colors.orange
       ),
       home: HomePage(),
     );

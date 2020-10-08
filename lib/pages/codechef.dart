@@ -59,6 +59,7 @@ class _CodeChefState extends State<CodeChef> {
             builder: (BuildContext context)
             {
               return AlertDialog(
+                backgroundColor: Color(0xffFBD28B),
                 title: Text('Error Occurred'),
                 content: Text(data['details']),
                 actions: [
@@ -84,11 +85,13 @@ class _CodeChefState extends State<CodeChef> {
       builder: (BuildContext context)
       {
         return AlertDialog(
+
+          backgroundColor: Color(0xffFBD28B),
           title: RichText(
             softWrap: true,
             text:TextSpan(
                 style: TextStyle(
-                    fontSize: 40,
+                    fontSize: 35,
                     fontFamily: 'Times New Roman',
                     color: Colors.black
                 ),
@@ -111,10 +114,11 @@ class _CodeChefState extends State<CodeChef> {
           ),
 
           content: Container(
-            height: 50,
+            height: 120,
+
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20.0),
-              color: Colors.white70,
+
 
             ),
             child: Column(
@@ -209,9 +213,11 @@ class _CodeChefState extends State<CodeChef> {
           ),
           actions: [
             FlatButton(
+              highlightColor: Colors.white70,
               child: Text("ok",style: TextStyle(
-                  fontSize: 20,
-                  fontFamily: 'Times New Roman'
+                  fontSize: 25,
+                  fontFamily: 'Times New Roman',
+                color: Colors.black87
               ),),
               onPressed: (){
                 Navigator.pop(context);
@@ -240,7 +246,7 @@ class _CodeChefState extends State<CodeChef> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      backgroundColor: Colors.orangeAccent,
+      backgroundColor: Color(0xffFBD28B),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(10.0),
@@ -275,9 +281,12 @@ class _CodeChefState extends State<CodeChef> {
                       },
                       decoration: InputDecoration(
                         labelText: 'Codechef Username',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
+                        focusColor: Colors.blue,
+                        helperMaxLines: 1,
+                        icon: Icon(Icons.account_circle),
+//                        border: OutlineInputBorder(
+//                          borderRadius: BorderRadius.circular(5.0),
+//                        ),
                       ),
                       onSaved: (input) {
                         text = input;
@@ -289,13 +298,13 @@ class _CodeChefState extends State<CodeChef> {
               ),
               SizedBox(height: 10.0,),
               loading ? CircularProgressIndicator():MaterialButton(
-                padding: EdgeInsets.all(20.0),
-                color: Colors.deepOrange,
+                padding: EdgeInsets.all(10.0),
+                color: Color(0xffE5B143),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: Align(
-                  child: Text('Show',style: TextStyle(color: Colors.white,fontSize: 20.0),),
+                  child: Text('Show',style: TextStyle(color: Colors.white70,fontSize: 30.0,fontFamily: 'monospace'),),
                 ),
                 onPressed: (){
                   getData();
