@@ -1,4 +1,4 @@
-# ratings
+# Competitive Rating
 
 A new Flutter application.
 
