@@ -26,7 +26,7 @@ List<String> images = ['assets/codechef.png','assets/codeforces.jpg','assets/spo
           style: TextStyle(
             fontFamily: 'monospace',
             fontWeight: FontWeight.bold,
-            fontSize: 25,
+            fontSize: 30,
             color: Colors.white70
           ),
         ),
