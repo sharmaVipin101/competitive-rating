@@ -1,6 +1,6 @@
 # Competitive Rating
 
-A new Flutter application.
+Flutter app to check ratings on competitive platforms easily.
 
 ## Getting Started
 
